@@ -2,8 +2,8 @@
 
 const CartWidget = ()=>{
     return(        
-        <div className="mx-2">
-            <img className="p-1 mt-2" style={{width:'30px', height:'30px'}} src="./img/icono.png" alt="carrito" />
+        <div className="mx-2 text-danger fw-bold">
+            <img className="p-1" style={{width:'35px', height:'35px'}} src="./img/icono.png" alt="carrito" />
             0
         </div>
     )

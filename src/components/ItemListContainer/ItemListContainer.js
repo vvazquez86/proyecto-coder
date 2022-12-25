@@ -1,7 +1,7 @@
 const ItemListContainer = ({greeting}) =>{
     return(
-        <div>
-            <h1 className="d-flex justify-content-center mt-5">{greeting}</h1>
+        <div className="d-flex justify-content-evenly mt-2 col-12">
+            <h1>{greeting}</h1>
         </div>
     )
 }

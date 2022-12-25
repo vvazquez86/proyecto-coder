@@ -1,7 +1,7 @@
 const Boton = ({label, handleClick})=>{
     return(
         <button 
-            className="btn btn-outline-dark m-2" onClick={handleClick}>
+            className="btn btn-outline-secondary m-2" onClick={handleClick}>
             {label}
             
         </button>
