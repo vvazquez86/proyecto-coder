@@ -1,6 +1,6 @@
 const products = [
     {
-        id: 1, 
+        id: '1', 
         name: 'Quemador de incienso en bronce', 
         price: 4500, 
         category: 'incienso', 
@@ -9,7 +9,7 @@ const products = [
         description:'Quemador de incienso retro, material: Bronce'
     },
     {
-        id: 2, 
+        id: '2', 
         name: 'Lampara de sal del Himalaya', 
         price: 1800, 
         category: 'lampara', 
@@ -18,7 +18,7 @@ const products = [
         description:'Lampara generica de sal del Himalaya'
     },
     {
-        id: 3, 
+        id: '3', 
         name: 'Lampara de sal con cascada de humo', 
         price: 3800, 
         category: 'lampara', 
@@ -27,7 +27,7 @@ const products = [
         description:'Lampara de sal y cascada de humo con Buda, Material: Ceramica'
     },
     {
-        id: 4, 
+        id: '4', 
         name: 'Humificador Modelo T', 
         price: 5200, 
         category: 'humificador', 
@@ -36,7 +36,7 @@ const products = [
         description:'Humificador electrico, modelo rosa'
     },
     {
-        id: 5, 
+        id: '5', 
         name: 'Humificador smart inalambrico', 
         price: 4200, 
         category: 'humificador', 

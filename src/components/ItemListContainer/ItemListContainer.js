@@ -16,8 +16,7 @@ useEffect(() => {
     asyncFunction(categoryId)
         .then(products =>
             {
-                setproducts(products)
-                console.log(products)
+                setproducts(products)                
             })
         .catch(error =>{
             console.log(error)
