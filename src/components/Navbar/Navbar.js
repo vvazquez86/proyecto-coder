@@ -6,12 +6,13 @@ const Navbar = () => {
         <nav className="bg-body-tertiary">
             <div className="d-flex justify-content-between align-items-center">                
                 <div>
-                <img style={{width:'120px', height:'40px'}} src="./img/logo.png" alt="carrito" />
+                <img style={{width:'120px', height:'40px'}} src="/img/logo.png" alt="carrito" />
                 </div>
                 <div className="">
-                    <Boton label='Home' handleClick={()=>console.log('Home')}/>
-                    <Boton label='Productos' handleClick={()=>console.log('Productos')}/>
-                    <Boton label='Contacto' handleClick={()=>console.log('Contacto')}/>                    
+                    <Boton label='Home' category={'/'}/>  
+                    <Boton label='Lamparas' category={'category/lampara'}/>
+                    <Boton label='Humificadores' category={'category/humificador'}/>
+                    <Boton label='Inciensos' category={'category/incienso'}/>                    
                 </div>
                 <div>
                     <CartWidget />

@@ -1,10 +1,11 @@
-const Boton = ({label, handleClick})=>{
+import { NavLink } from "react-router-dom"
+
+const Boton = ({label, category})=>{
     return(
-        <button 
-            className="btn btn-outline-secondary m-2" onClick={handleClick}>
-            {label}
-            
-        </button>
+        <NavLink to={category}
+            className={({ isActive}) => isActive?"btn btn-success m-2":"btn btn-outline-success m-2"}>
+            {label}            
+        </NavLink>
     )
 }
 
