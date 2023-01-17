@@ -5,31 +5,46 @@ import { useParams } from 'react-router-dom';
 import { getProductsByCategory } from '../../asyncMock';
 
 
-const ItemListContainer = ({greeting}) =>{
+const ItemListContainer = ({ greeting }) => {
 
     const [products, setproducts] = useState([])
-    const {categoryId} = useParams()
+    const [loading, setLoading] = useState(true)
+    const { categoryId } = useParams()
+    const [error, setError] = useState(false)
 
-useEffect(() => {
-    
-    const asyncFunction = categoryId ? getProductsByCategory : getProducts
-    asyncFunction(categoryId)
-        .then(products =>
-            {
-                setproducts(products)                
+    useEffect(() => {
+
+        const asyncFunction = categoryId ? getProductsByCategory : getProducts
+        asyncFunction(categoryId)
+            .then(products => {
+                setproducts(products)
             })
-        .catch(error =>{
-            console.log(error)
-        })
-}, [categoryId])
-    return(
+            .catch(error => {
+                setError(true)
+            })
+            .finally(() => {
+                setLoading(false)
+            })
+    }, [categoryId])
+
+    if (loading) {
+        return  <div className='d-flex justify-content-center'>
+                    <div class="spinner-border text-success m-5" role="status">                        
+                    </div>                    
+                </div>
+    }
+
+    if(error){
+        return <h1>Hubo un error en la carga</h1>
+    }
+    return (
         <div className="mt-2 text-center">
-            <h1 className='mb-5'>{greeting}</h1> 
-            <div className='d-flex flex-column'>
-            <ItemList products = {products} />
-            </div>                       
+            <h1 className='h4 pb-2 mb-4 text-secondary border-bottom border-secondary'>{greeting}</h1>
+            <div className='d-flex flex-row justify-content-around'>
+                <ItemList products={products} />
+            </div>
         </div>
-        
+
     )
 }
 

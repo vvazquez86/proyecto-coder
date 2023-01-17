@@ -16,13 +16,13 @@ const ItemCount = ({initial = 1, stock}) =>{
         }         
     }
     return(        
-        <div className="border text-center mt-4 p-2">  
+        <div className="border text-center mt-4 p-3">  
             <h4>{count}</h4>
             <div className="m-3 d-flex justify-content-around">
-                <button onClick={decrement}>-</button>
-                <button onClick={increment}>+</button>                
+                <button className="btn btn-success" onClick={decrement}>-</button>
+                <button className="btn btn-success" onClick={increment}>+</button>                
             </div>            
-            <button>Agregar al Carrito</button>
+            <button className="btn btn-secondary" >Agregar al Carrito</button>
         </div>
     )
 }
