@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 
 
 
-const Item = ({ id, name, img, price }) => {
+const Item = ({ id, name, img, price }) => {   
     return (
         <div className="m-3">
             <div className="mb-3 border-3 card" style={{ width: 200 }}>

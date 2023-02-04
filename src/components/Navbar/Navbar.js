@@ -1,8 +1,13 @@
 import Boton from "../Boton/Boton"
 import CartWidget from "../CartWidget/CartWidget"
 import { Link } from "react-router-dom"
+import { useContext } from "react"
+import { CartContext } from "../../context/CartContext"
 
 const Navbar = () => {
+    
+    const { totalQuantity } = useContext(CartContext)
+    
     return (        
 
         <nav className="bg-body-tertiary">
@@ -18,7 +23,7 @@ const Navbar = () => {
                     <Boton label='Inciensos' category={'category/incienso'}/>                    
                 </div>
                 <div>
-                    <CartWidget />
+                    <CartWidget totalQuantity = {totalQuantity}/>
                 </div>
             </div>
         </nav>
