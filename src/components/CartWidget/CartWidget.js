@@ -1,12 +1,14 @@
+import { Link } from "react-router-dom"
 
 
-const CartWidget = ({ totalQuantity})=>{
+const CartWidget = ({ totalQuantity }) => {
 
-    console.log(totalQuantity)
-    return(        
+    return (
         <div className="mx-2 text-danger fw-bold">
-            <img className="p-1" style={{width:'35px', height:'35px'}} src="/img/icono.png" alt="carrito" />
-            {totalQuantity}            
+            <Link to='/cart'>
+                <img className="p-1" style={{ width: '35px', height: '35px' }} src="/img/icono.png" alt="carrito" />
+            </Link>
+            {totalQuantity}
         </div>
     )
 }

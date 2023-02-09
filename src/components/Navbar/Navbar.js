@@ -23,7 +23,7 @@ const Navbar = () => {
                     <Boton label='Inciensos' category={'category/incienso'}/>                    
                 </div>
                 <div>
-                    <CartWidget totalQuantity = {totalQuantity}/>
+                    <CartWidget totalQuantity = { totalQuantity }/>
                 </div>
             </div>
         </nav>

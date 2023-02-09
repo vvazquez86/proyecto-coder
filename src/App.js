@@ -7,12 +7,12 @@ import { CartProvider } from './context/CartContext';
 
 function App() {
   return (
-    <CartProvider>
-      <BrowserRouter>
+    <BrowserRouter>
+      <CartProvider>
         <Navbar />
         <AppRouter />
-      </BrowserRouter>
-    </CartProvider>
+      </CartProvider>
+    </BrowserRouter>
   );
 }
 
