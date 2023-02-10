@@ -31,7 +31,7 @@ const ItemDetailsConteiner = () => {
 
     if (loading) {
         return <div className='d-flex justify-content-center'>
-            <div class="spinner-border text-success m-5" role="status">
+            <div className="spinner-border text-success m-5" role="status">
             </div>
         </div>
     }
