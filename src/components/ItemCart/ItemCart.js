@@ -1,20 +1,32 @@
+import { useContext } from "react"
+import { CartContext } from "../../context/CartContext"
+
 const ItemCart = ({ id, name, quantity, price, img }) => {
+    let subTotal = price * quantity
+    const { removeItem } = useContext(CartContext)
     return (
-
-        <div className="d-flex justify-content-center">
-            <div className="card m-3 d-flex flex-row" style={{ width: 400 }}>
-                <div className="card-body">
-                    <h5 className="card-title">{name}</h5>
-                    <p className="card-text">Cantidad:{quantity}</p>
-                    <p className="card-text">Precio:{price}</p>
-                    <p className="card-text">Precio total:{price * quantity}</p>
+        <div className="container text-center border border-3 mb-2 mt-2">
+            <div className="row align-items-center">
+                <div className="col fw-bold">
+                    {name}
                 </div>
-                <div>
-                    <img className="p-3 mx-1" src={img} alt={name} style={{ width: 60 }} />
+                <div className="col p-2">
+                    <img src={img} style={{ width: 50 }} alt='Carrito' />
                 </div>
-            </div>
+                <div className="col">
+                    Precio: ${price}
+                </div>
+                <div className="col">
+                    Cantidad : {quantity}
+                </div>
+                <div className="col">
+                    Subtotal: ${subTotal}
+                </div>
+                <div className="col">
+                <button className="btn btn-outline-danger" onClick={ ()=> removeItem(id) }><img className="" style={{ width: '25px', height: '25px' }} src="/img/trash.png" alt="carrito" /></button>
+                </div>
+            </div>            
         </div>
-
     )
 }
 

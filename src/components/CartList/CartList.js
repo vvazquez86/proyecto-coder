@@ -1,13 +1,15 @@
 import ItemCart from "../ItemCart/ItemCart"
 
 const CartList = ({ cart }) => {
-    console.log(cart)
-    return(
+    
+    return (
+
         <div>
             {
                 cart.map(prod => <ItemCart key={prod.id} {...prod} />)
             }
         </div>
+
     )
 }
 

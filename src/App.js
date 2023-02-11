@@ -5,14 +5,16 @@ import AppRouter from './routes/AppRouter';
 import { CartProvider } from './context/CartContext';
 
 
+
 function App() {
   return (
     <BrowserRouter>
       <CartProvider>
         <Navbar />
         <AppRouter />
+        
       </CartProvider>
-    </BrowserRouter>
+    </BrowserRouter>    
   );
 }
 

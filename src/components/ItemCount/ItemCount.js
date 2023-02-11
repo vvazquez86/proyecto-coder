@@ -9,10 +9,11 @@ const ItemCount = ({initial = 1, stock, onAdd}) =>{
             setCount(prev => prev - 1)
         }        
     }
-
+    
     const increment = ()=>{
         if (count < stock){
             setCount(prev => prev + 1)
+            console.log('asdiasbja')            
         }         
     }
     return(        

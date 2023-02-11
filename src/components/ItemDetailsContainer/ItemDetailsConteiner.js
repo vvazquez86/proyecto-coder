@@ -1,43 +1,27 @@
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { getProductsById } from "../../service/firestore/products";
+import { useAsync } from '../../hooks/useAsync';
 import ItemDetail from "../ItemDetail/ItemDetail";
-import { getDoc, doc } from "firebase/firestore";
-import { db } from "../../service/firebase/firebaseConfig";
+import { useTitle } from '../../hooks/useTitle';
+
 
 const ItemDetailsConteiner = () => {
 
     const { productId } = useParams()
-    const [product, setProducts] = useState({})
-    const [loading, setLoading] = useState(true)
-    const [error, setError] = useState(false)
+    const getProduct = () => getProductsById(productId)
+    const { data: product, loading, error} = useAsync(getProduct, [productId])
+    
+    useTitle('Detalle del producto',[])
 
-    useEffect(() => {
-        const docRef = doc(db, 'products', productId)
-
-        getDoc(docRef).then(response => {
-            
-            const dataProduct = response.data()
-            const productAdapted = { id: response.id, ...dataProduct }
-            setProducts(productAdapted)
-        }).catch(error => {
-            console.log(error)
-            setError(true)
-        }).finally(
-            () => {
-                setLoading(false)
-            }
-        )
-    }, [productId])
-
+    if (error) {
+        return <h1>Hubo un error en la carga!</h1>
+    }
+    
     if (loading) {
         return <div className='d-flex justify-content-center'>
             <div className="spinner-border text-success m-5" role="status">
             </div>
         </div>
-    }
-
-    if (error) {
-        return <h1>Hubo un error en la carga!</h1>
     }
 
     return (

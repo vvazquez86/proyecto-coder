@@ -3,12 +3,13 @@ import { createContext, useState } from "react"
 export const CartContext = createContext()
 
 export const CartProvider = ({ children }) => {
-    
+
     const [cart, setCart] = useState([])    
 
     const addItem = (productToAdd) => {
         if (!isInCart(productToAdd.id)) {
-            setCart(prev => [...prev, productToAdd])
+            setCart(prev => [...prev, productToAdd]) 
+                       
         }
     }
 
@@ -44,11 +45,12 @@ export const CartProvider = ({ children }) => {
     }
     
     const totalQuantity = getTotalQuantity()
+    
 
     const totalBuy = getTotalBuy()
 
     return (
-        <CartContext.Provider value={{ cart, addItem, isInCart, totalQuantity, totalBuy, clearCart }}>
+        <CartContext.Provider value={{ cart, addItem, isInCart, totalQuantity, totalBuy, clearCart, removeItem }}>
             {children}
         </CartContext.Provider>
     )
