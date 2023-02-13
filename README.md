@@ -1,15 +1,11 @@
-## ecommerce de Relax
+## Proyecto de ecommerce de Relax
 
 ## Forma de instalacion
 
 ```sh
-Primero hay que clonar el proyecto con el siguiente link:
 $ git clone https://github.com/vvazquez86/proyecto-coder.git
-Despues nos tenemos que ubicar en la carpeta donde se encuentra el proyeto
 $ cd proyecto-coder
-Debemos instalar las dependencias
 $ npm install
-Al finalizar todos los pasos iniciamos el proyecto
 $ npm start
 ```
 ## Skill utilizadas
@@ -33,4 +29,4 @@ $ npm start
 -
 ## Imagenes del sitio
 
-https://i.ibb.co/n3NY5Tr/relax.png
+ ! [alt tag] (https://i.ibb.co/n3NY5Tr/relax.png)
