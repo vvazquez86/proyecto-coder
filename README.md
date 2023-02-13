@@ -29,4 +29,4 @@ $ npm start
 -
 ## Imagenes del sitio
 
- ! [alt tag] (https://i.ibb.co/n3NY5Tr/relax.png)
+![](https://i.ibb.co/n3NY5Tr/relax.png)
